@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Generator</title>
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By Hariom</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="namefield" placeholder="Enter here" class="form-control">
+                </div>
+
+
+                <div class="form-group mt-2">
+                    <label for="contactfield">Contact No.</label>
+                    <input type="text" id="contactfield" placeholder="Enter here" class="form-control">
+                </div>
+
+
+                <div class="form-group mt-2">
+                    <label for="addressfield">Your Address</label>
+                    <textarea type="text" id="addressfield" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+
+
+                <div>
+                    <h3>Important links</h3>
+                    <div class="form-group">
+                        <label for="fbfield">Facebook</label>
+                        <input type="text" id="fbfield" placeholder="Enter here" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="gitfield">Github</label>
+                        <input type="text" id="gitfield" placeholder="Enter here" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkfield">LinkedIn</label>
+                        <input type="text" id="linkfield" placeholder="Enter here" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Professional Information</h3>
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea id="obfield" placeholder="Enter here" rows="5" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience</label>
+                    <textarea id="workfield" placeholder="Enter here" rows="3" class="form-control wefield"></textarea>
+                    <div class="container text-center mt-2 " id="weaddbutton">
+                        <button onclick="addNewWefield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+                <!--new text area-->
+
+
+                <div class="form-group mt-2" id="aq">
+                    <label for="addressfield">Academic Qualification</label>
+                    <textarea placeholder="Enter here" rows="3" class="form-control aqfield"></textarea>
+                    <div class="container text-center mt-2" id="aqaddbutton">
+                        <button onclick="addNeWfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+    <!--cv template-->
+
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!--first col-->
+                <img src="360_F_109006426_388PagqielgjFTAMgW59jRaDmPJvSBUL.webp" alt="" class="img-fluid myimg">
+                <div class="container">
+                    <p id="nameT1">hariom kumar</p>
+                    <p id="contactT">+91477477374,+917743636377</p>
+                    <p id="addressT">52/91 sec-31 faridabad,INDIA</p>
+                    <hr />
+                    <p id="fbT"><a href="#1"></a>www.facebook.com</p>
+                    <p id="gT"><a href="#1"></a>www.github.com</p>
+                    <p id="linkT"><a href="#1"></a>www.linkedin.com</p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!--2nd col-->
+                <h1 id="nameT2" class="text-center" style="font-weight: 980;">Hariom Kumar</h1>
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="obT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vero vel numquam
+                            deserunt velit eius doloribus ipsum et fuga iusto assumenda nihil itaque, sit atque.
+                            Deserunt tenetur perspiciatis aperiam iure!</p>
+                    </div>
+                </div>
+
+                <!--work experience-->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--academic qualification-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae.</li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="container mt-3 text-center">
+                <button onclick="printCV()" class="btn background">
+                    Print CV
+                </button>
+            </div>    
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
